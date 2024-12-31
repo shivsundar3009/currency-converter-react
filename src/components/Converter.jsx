@@ -36,13 +36,13 @@ const Converter = () => {
   }, [amount, conversionRate, toCurrency]);
 
   return (
-    <div className="p-6 bg-white/90 rounded-lg shadow-md ">
+    <div className="p-6 bg-white/90 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4 text-center text-gray-700">
         Currency Converter
       </h1>
-      <div className="flex w-full gap-4">
+      <div className="flex flex-col md:flex-row w-full gap-4">
         {/* From Currency Dropdown and Amount Input */}
-        <div className="w-full">
+        <div className="w-full md:w-1/2">
           <label className="block mb-2 text-gray-600 font-medium">
             From Currency ({fromCurrency})
           </label>
@@ -68,7 +68,7 @@ const Converter = () => {
         </div>
 
         {/* To Currency Dropdown and Result */}
-        <div className="w-full">
+        <div className="w-full md:w-1/2">
           <label className="block mb-2 text-gray-600 font-medium">
             To Currency ({toCurrency})
           </label>
@@ -91,15 +91,12 @@ const Converter = () => {
             className="p-2 border border-gray-300 rounded w-full bg-gray-100 text-gray-500"
           />
         </div>
-
-       
       </div>
 
-       {/* Static message for conversion rate */}
-       <p className="text-center mt-4 text-sm text-gray-600">
-          Conversion rate: {fromCurrency} = {conversionRate && conversionRate[toCurrency]}
-        </p>
-
+      {/* Static message for conversion rate */}
+      <p className="text-center mt-4 text-sm text-gray-600">
+        Conversion rate: {fromCurrency} = {conversionRate && conversionRate[toCurrency]}
+      </p>
     </div>
   );
 };
